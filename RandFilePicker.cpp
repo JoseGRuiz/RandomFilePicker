@@ -38,6 +38,9 @@ int main() {
 		//std::cout << "pick chosen " << pick << std::endl;
 		j = 0;
 		for (auto& f : fs::recursive_directory_iterator(currDir)) {
+			if (foundRegular) {
+				break;
+			}
 			if (j == pick) {
 				if (fs::is_regular_file(f)) {
 					theChosen = f;
